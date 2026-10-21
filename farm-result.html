@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Farm Plan Result | SmartFarm360</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<!-- =========================================================
+     NAVIGATION BAR
+========================================================= -->
+
+<nav class="navbar">
+
+    <a href="/" class="logo">
+        🌱 SmartFarm360
+    </a>
+
+    <div class="nav-links">
+
+        <a href="/">Home</a>
+
+        <a href="/farm-input">
+            Farm Planning
+        </a>
+
+        <a href="/about">
+            About
+        </a>
+
+        <a href="/contact">
+            Contact
+        </a>
+
+        <a href="/officers">
+            Agricultural Officers
+        </a>
+
+        <a href="/admin">
+            Admin
+        </a>
+
+    </div>
+
+</nav>
+
+
+<!-- =========================================================
+     MAIN CONTENT
+========================================================= -->
+
+<main class="planning-page">
+
+    <!-- =====================================================
+         PAGE HEADER
+    ====================================================== -->
+
+    <div class="planning-header">
+
+        <span class="planning-label">
+            FARM PLAN RESULT
+        </span>
+
+        <h1>
+            🌱 Your Personalized Farm Plan
+        </h1>
+
+        <p>
+            SmartFarm360 analyzed your farm conditions
+            and generated a crop recommendation.
+        </p>
+
+    </div>
+
+
+    <!-- =====================================================
+         TOP RECOMMENDATION
+    ====================================================== -->
+
+    <section class="planning-card recommendation-card">
+
+        <div class="section-heading">
+
+            <h2>
+                🏆 Top Recommendation
+            </h2>
+
+            <p>
+                Best matching crop based on your current
+                farm conditions.
+            </p>
+
+        </div>
+
+
+        <div class="recommendation-main">
+
+            <div class="recommendation-icon">
+                🌱
+            </div>
+
+            <div>
+
+                <h2>
+                    {{ recommended_crop }}
+                </h2>
+
+                <p>
+                    SmartFarm360 selected this crop based on
+                    soil, season, water availability and budget.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         WHY THIS CROP?
+    ====================================================== -->
+
+    <section class="planning-card">
+
+        <div class="section-heading">
+
+            <h2>
+                💡 Why was {{ recommended_crop }} recommended?
+            </h2>
+
+            <p>
+                The recommendation is based on the following
+                conditions provided by you.
+            </p>
+
+        </div>
+
+
+        {% for crop in crop_scores %}
+
+            {% if crop.name == recommended_crop %}
+
+                <div class="reason-list">
+
+                    {% for reason in crop.reasons %}
+
+                        <div class="reason-item">
+
+                            <span class="reason-check">
+                                ✓
+                            </span>
+
+                            <span>
+                                {{ reason }}
+                            </span>
+
+                        </div>
+
+                    {% endfor %}
+
+                </div>
+
+            {% endif %}
+
+        {% endfor %}
+
+    </section>
+
+
+    <!-- =====================================================
+         TOP CROP OPTIONS
+    ====================================================== -->
+
+    <section class="planning-card">
+
+        <div class="section-heading">
+
+            <h2>
+                🏆 Top Crop Options
+            </h2>
+
+            <p>
+                SmartFarm360 compares different crops
+                before making a recommendation.
+            </p>
+
+        </div>
+
+
+        <div class="crop-options">
+
+            {% for crop in crop_scores %}
+
+                <div class="crop-option">
+
+                    <div class="crop-rank">
+
+                        {% if loop.index == 1 %}
+                            🥇
+                        {% elif loop.index == 2 %}
+                            🥈
+                        {% elif loop.index == 3 %}
+                            🥉
+                        {% else %}
+                            {{ loop.index }}
+                        {% endif %}
+
+                    </div>
+
+
+                    <div class="crop-info">
+
+                        <h3>
+                            {{ crop.name }}
+                        </h3>
+
+                        <p>
+                            Suitability:
+                            <strong>
+                                {{ crop.score }}%
+                            </strong>
+                        </p>
+
+
+                        <div class="crop-reasons">
+
+                            {% for reason in crop.reasons %}
+
+                                <span>
+                                    ✓ {{ reason }}
+                                </span>
+
+                            {% endfor %}
+
+                        </div>
+
+
+                        <div class="crop-financial">
+
+                            <div>
+
+                                <strong>
+                                    Estimated Cost
+                                </strong>
+
+                                <span>
+                                    ₹{{ "{:,.0f}".format(crop.estimated_cost) }}
+                                </span>
+
+                            </div>
+
+
+                            <div>
+
+                                <strong>
+                                    Budget Coverage
+                                </strong>
+
+                                <span>
+                                    {{ "{:.1f}".format(crop.budget_coverage) }}%
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            {% endfor %}
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         FARM DETAILS
+    ====================================================== -->
+
+    <section class="planning-card">
+
+        <div class="section-heading">
+
+            <h2>
+                📋 Your Farm Details
+            </h2>
+
+        </div>
+
+
+        <div class="info-grid">
+
+            <div class="info-box">
+
+                <span>
+                    Land Area
+                </span>
+
+                <strong>
+                    {{ land_area }} acres
+                </strong>
+
+            </div>
+
+
+            <div class="info-box">
+
+                <span>
+                    Soil Type
+                </span>
+
+                <strong>
+                    {{ soil_type }}
+                </strong>
+
+            </div>
+
+
+            <div class="info-box">
+
+                <span>
+                    Water Availability
+                </span>
+
+                <strong>
+                    {{ water_availability }}
+                </strong>
+
+            </div>
+
+
+            <div class="info-box">
+
+                <span>
+                    Season
+                </span>
+
+                <strong>
+                    {{ season }}
+                </strong>
+
+            </div>
+
+
+            <div class="info-box">
+
+                <span>
+                    Available Budget
+                </span>
+
+                <strong>
+                    ₹{{ "{:,.0f}".format(budget) }}
+                </strong>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         FARM PLANNING INFORMATION
+    ====================================================== -->
+
+    <section class="planning-card">
+
+        <div class="section-heading">
+
+            <h2>
+                🌾 Farm Planning Information
+            </h2>
+
+        </div>
+
+
+        <div class="info-grid">
+
+            <div class="info-box">
+
+                <span>
+                    Water Requirement
+                </span>
+
+                <strong>
+                    {{ water_required }}
+                </strong>
+
+            </div>
+
+
+            <div class="info-box">
+
+                <span>
+                    Estimated Cultivation Cost
+                </span>
+
+                <strong>
+                    ₹{{ "{:,.0f}".format(estimated_cost) }}
+                </strong>
+
+            </div>
+
+
+            <div class="info-box">
+
+                <span>
+                    Expected Yield
+                </span>
+
+                <strong>
+                    {{ "{:.2f}".format(expected_yield) }}
+                    {{ yield_unit }}
+                </strong>
+
+            </div>
+
+
+            <div class="info-box">
+
+                <span>
+                    Planning Risk Indicator
+                </span>
+
+                <strong>
+                    {{ risk_level }}
+                </strong>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         FINANCIAL PLAN
+    ====================================================== -->
+
+    <section class="planning-card">
+
+        <div class="section-heading">
+
+            <h2>
+                💰 Financial Plan
+            </h2>
+
+        </div>
+
+
+        <div class="info-grid">
+
+            <div class="info-box">
+
+                <span>
+                    Available Budget
+                </span>
+
+                <strong>
+                    ₹{{ "{:,.0f}".format(budget) }}
+                </strong>
+
+            </div>
+
+
+            <div class="info-box">
+
+                <span>
+                    Estimated Cost
+                </span>
+
+                <strong>
+                    ₹{{ "{:,.0f}".format(estimated_cost) }}
+                </strong>
+
+            </div>
+
+
+            <div class="info-box">
+
+                <span>
+                    Budget Coverage
+                </span>
+
+                <strong>
+                    {{ "{:.1f}".format(budget_coverage_percent) }}%
+                </strong>
+
+            </div>
+
+
+            <div class="info-box">
+
+                <span>
+                    Additional Funding Required
+                </span>
+
+                <strong>
+                    ₹{{ "{:,.0f}".format(budget_gap) }}
+                </strong>
+
+            </div>
+
+
+            <div class="info-box">
+
+                <span>
+                    Estimated Revenue
+                </span>
+
+                <strong>
+                    ₹{{ "{:,.0f}".format(estimated_revenue) }}
+                </strong>
+
+            </div>
+
+
+            <div class="info-box">
+
+                <span>
+                    Estimated Profit
+                </span>
+
+                <strong>
+
+                    {% if estimated_profit >= 0 %}
+
+                        ₹{{ "{:,.0f}".format(estimated_profit) }}
+
+                    {% else %}
+
+                        -₹{{ "{:,.0f}".format(estimated_profit|abs) }}
+
+                    {% endif %}
+
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <p class="planning-note">
+
+            * Financial figures are estimates based on the
+            project assumptions for expected yield, estimated
+            price and cultivation cost. Actual results may vary.
+
+        </p>
+
+    </section>
+
+
+    <!-- =====================================================
+         RESOURCE PLAN
+    ====================================================== -->
+
+    <section class="planning-card">
+
+        <div class="section-heading">
+
+            <h2>
+                📦 Resource Plan
+            </h2>
+
+            <p>
+                Estimated resources required for the selected
+                crop and land area.
+            </p>
+
+        </div>
+
+
+        <div class="info-grid">
+
+            <div class="info-box">
+
+                <span>
+                    Seeds Required
+                </span>
+
+                <strong>
+                    {{ "{:.2f}".format(seeds_required) }}
+                    {{ seed_unit }}
+                </strong>
+
+            </div>
+
+
+            <div class="info-box">
+
+                <span>
+                    Fertilizer Required
+                </span>
+
+                <strong>
+                    {{ "{:.2f}".format(fertilizer_required) }}
+                    {{ fertilizer_unit }}
+                </strong>
+
+            </div>
+
+
+            <div class="info-box">
+
+                <span>
+                    Labour Required
+                </span>
+
+                <strong>
+                    {{ "{:.2f}".format(labour_required) }}
+                    labour-days
+                </strong>
+
+            </div>
+
+
+            <div class="info-box">
+
+                <span>
+                    Water Requirement
+                </span>
+
+                <strong>
+                    {{ water_required }}
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="budget-message">
+
+            {% if budget_gap > 0 %}
+
+                ⚠️ {{ budget_status }}
+
+            {% else %}
+
+                ✅ {{ budget_status }}
+
+            {% endif %}
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         ACTION BUTTONS
+    ====================================================== -->
+
+    <div class="result-actions">
+
+        <a href="/crop-schedule/{{ recommended_crop }}"
+           class="generate-btn">
+
+            📅 View Crop Schedule →
+
+        </a>
+
+
+        <a href="/farm-input"
+           class="back-home-btn">
+
+            🌱 Create Another Farm Plan
+
+        </a>
+
+
+        <a href="/"
+           class="back-home-btn">
+
+            ← Back to Home
+
+        </a>
+
+    </div>
+
+</main>
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer class="footer">
+
+    <p>
+        © 2026 SmartFarm360 |
+        Integrated Farm Resource Planning System
+    </p>
+
+</footer>
+
+
+</body>
+
+</html>

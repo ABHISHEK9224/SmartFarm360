@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SmartFarm360</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+
+    <nav class="navbar">
+
+        <a href="/" class="logo">
+            🌱 SmartFarm360
+        </a>
+
+        <div class="nav-links">
+
+            <a href="/" class="active">Home</a>
+
+            <a href="/farm-input">
+                🌾 Farm Planning
+            </a>
+
+            <a href="/about">
+                About
+            </a>
+
+            <a href="/contact">
+                🤝 Get Help
+            </a>
+
+            <a href="/admin">
+                Admin
+            </a>
+
+        </div>
+
+        <!-- LANGUAGE -->
+
+        <select class="language-select">
+
+            <option>🌐 English</option>
+            <option>ಕನ್ನಡ</option>
+            <option>हिंदी</option>
+            <option>తెలుగు</option>
+            <option>मराठी</option>
+
+        </select>
+
+    </nav>
+
+
+    <!-- HERO SECTION -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <span class="welcome-label">
+                👋 Welcome, Farmer
+            </span>
+
+            <h1>
+                Smart Farming,
+                <span>Better Decisions.</span>
+            </h1>
+
+            <p>
+                Simple and smart farming guidance to help you
+                choose crops, manage resources and plan your farm.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="/farm-input" class="btn">
+                    🌾 Start Farm Planning →
+                </a>
+
+                <a href="/contact" class="secondary-btn">
+                    👨‍🌾 Get Help
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- FARMER CARD -->
+
+        <div class="hero-card">
+
+            <div class="card-header">
+
+                <div class="card-icon">
+                    🌱
+                </div>
+
+                <div>
+
+                    <h3>
+                        Your Farm Assistant
+                    </h3>
+
+                    <p>
+                        Simple guidance for your farm
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="smart-option">
+
+                <span class="option-icon">
+                    🌾
+                </span>
+
+                <div>
+
+                    <strong>
+                        Crop Recommendation
+                    </strong>
+
+                    <small>
+                        Find suitable crops
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="smart-option">
+
+                <span class="option-icon">
+                    💧
+                </span>
+
+                <div>
+
+                    <strong>
+                        Resource Planning
+                    </strong>
+
+                    <small>
+                        Manage water and inputs
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="smart-option">
+
+                <span class="option-icon">
+                    💰
+                </span>
+
+                <div>
+
+                    <strong>
+                        Cost & Profit
+                    </strong>
+
+                    <small>
+                        Understand your farm costs
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="smart-option">
+
+                <span class="option-icon">
+                    👨‍🌾
+                </span>
+
+                <div>
+
+                    <strong>
+                        Expert Help
+                    </strong>
+
+                    <small>
+                        Connect with agricultural support
+                    </small>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FEATURES -->
+
+    <section class="features">
+
+        <div class="section-heading">
+
+            <span>
+                SMART FARMING MADE SIMPLE
+            </span>
+
+            <h2>
+                Everything You Need in One Place
+            </h2>
+
+            <p>
+                No complicated steps. Just enter your farm details
+                and get simple recommendations.
+            </p>
+
+        </div>
+
+
+        <div class="feature-container">
+
+
+            <div class="feature-box">
+
+                <div class="feature-icon">
+                    🌾
+                </div>
+
+                <h3>
+                    Choose the Right Crop
+                </h3>
+
+                <p>
+                    Get crop suggestions based on your
+                    soil, water and season.
+                </p>
+
+            </div>
+
+
+            <div class="feature-box">
+
+                <div class="feature-icon">
+                    💧
+                </div>
+
+                <h3>
+                    Manage Resources
+                </h3>
+
+                <p>
+                    Plan your water, seeds, fertilizer
+                    and other farm resources.
+                </p>
+
+            </div>
+
+
+            <div class="feature-box">
+
+                <div class="feature-icon">
+                    💰
+                </div>
+
+                <h3>
+                    Know Your Costs
+                </h3>
+
+                <p>
+                    Understand estimated farming costs
+                    and possible returns.
+                </p>
+
+            </div>
+
+
+            <div class="feature-box">
+
+                <div class="feature-icon">
+                    🤝
+                </div>
+
+                <h3>
+                    Get Expert Help
+                </h3>
+
+                <p>
+                    Find agricultural guidance when
+                    you need additional support.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- SIMPLE CTA -->
+
+    <section class="home-help">
+
+        <div>
+
+            <span>
+                👨‍🌾 FARMER SUPPORT
+            </span>
+
+            <h2>
+                Not sure what to do?
+            </h2>
+
+            <p>
+                Don't worry. SmartFarm360 is designed to
+                guide you step by step.
+            </p>
+
+        </div>
+
+        <a href="/contact">
+            Get Help →
+        </a>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer class="footer">
+
+        <p>
+            © 2026 SmartFarm360
+        </p>
+
+        <p>
+            Simple technology for better farming decisions.
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>

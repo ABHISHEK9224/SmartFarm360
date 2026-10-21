@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login | SmartFarm360</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body class="login-body">
+
+    <div class="login-container">
+
+        <!-- LOGO -->
+
+        <div class="login-logo">
+            🌱
+        </div>
+
+        <h1>
+            SmartFarm360
+        </h1>
+
+        <p class="login-welcome">
+            Welcome, Farmer
+        </p>
+
+        <p class="login-subtitle">
+            Sign in to manage your farm easily.
+        </p>
+
+
+        <!-- LOGIN FORM -->
+
+        <form action="/login" method="POST">
+
+            <div class="login-group">
+
+                <label>
+                    Mobile Number
+                </label>
+
+                <input
+                    type="tel"
+                    name="mobile"
+                    placeholder="Enter your mobile number"
+                    required
+                >
+
+            </div>
+
+
+            <div class="login-group">
+
+                <label>
+                    Password
+                </label>
+
+                <input
+                    type="password"
+                    name="password"
+                    placeholder="Enter your password"
+                    required
+                >
+
+            </div>
+
+
+            <div class="login-options">
+
+                <label>
+                    <input type="checkbox">
+                    Remember me
+                </label>
+
+                <a href="#">
+                    Forgot password?
+                </a>
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="login-btn"
+            >
+                Login →
+            </button>
+
+        </form>
+
+
+        <!-- REGISTER -->
+
+        <div class="create-account">
+
+            <span>
+                New farmer?
+            </span>
+
+            <a href="/register">
+                Create an account
+            </a>
+
+        </div>
+
+
+        <div class="login-divider">
+            <span>or</span>
+        </div>
+
+
+        <!-- GUEST -->
+
+        <a href="/" class="guest-btn">
+            Continue as Guest
+        </a>
+
+
+        <!-- LANGUAGE -->
+
+        <div class="login-language">
+
+            🌐
+
+            <select>
+
+                <option>
+                    English
+                </option>
+
+                <option>
+                    ಕನ್ನಡ
+                </option>
+
+                <option>
+                    हिंदी
+                </option>
+
+                <option>
+                    తెలుగు
+                </option>
+
+                <option>
+                    मराठी
+                </option>
+
+            </select>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

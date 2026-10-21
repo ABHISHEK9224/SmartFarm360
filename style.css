@@ -1,0 +1,1027 @@
+/* =========================================================
+   SMARTFARM360
+   MAIN WEBSITE STYLES
+   ========================================================= */
+
+
+/* ================= RESET ================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f8f4;
+    color: #26352a;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* ================= NAVBAR ================= */
+
+.navbar {
+    width: 100%;
+    min-height: 68px;
+
+    background: #ffffff;
+
+    border-bottom: 1px solid #e1e8e1;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 12px 5%;
+
+    position: sticky;
+    top: 0;
+
+    z-index: 1000;
+}
+
+
+/* LOGO */
+
+.logo {
+    color: #2f6d3d;
+
+    font-size: 22px;
+
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+
+/* NAVIGATION */
+
+.nav-links {
+    display: flex;
+
+    align-items: center;
+
+    gap: 22px;
+}
+
+.nav-links a {
+    color: #46544a;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    transition: 0.2s ease;
+}
+
+.nav-links a:hover {
+    color: #2f7d45;
+}
+
+
+/* ================= MAIN PAGE ================= */
+
+.planning-page {
+    width: 94%;
+
+    max-width: 1050px;
+
+    margin: 0 auto;
+
+    padding: 42px 0 55px;
+}
+
+
+/* ================= PAGE HEADER ================= */
+
+.planning-header {
+    text-align: center;
+
+    margin-bottom: 28px;
+}
+
+
+.planning-label {
+    display: inline-block;
+
+    background: #e8f4e9;
+
+    color: #347344;
+
+    padding: 6px 13px;
+
+    border-radius: 20px;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.7px;
+
+    margin-bottom: 10px;
+}
+
+
+.planning-header h1 {
+    color: #254f31;
+
+    font-size: 32px;
+
+    line-height: 1.3;
+
+    margin-bottom: 8px;
+}
+
+
+.planning-header p {
+    color: #6c786f;
+
+    font-size: 15px;
+
+    max-width: 650px;
+
+    margin: 0 auto;
+}
+
+
+/* ================= CARD ================= */
+
+.planning-card {
+    background: #ffffff;
+
+    border: 1px solid #e3eae3;
+
+    border-radius: 15px;
+
+    padding: 28px;
+
+    margin-bottom: 22px;
+
+    box-shadow:
+        0 4px 16px rgba(45, 75, 50, 0.06);
+}
+
+
+/* ================= SECTION HEADING ================= */
+
+.section-heading {
+    margin-bottom: 22px;
+}
+
+.section-heading h2 {
+    color: #294f34;
+
+    font-size: 22px;
+
+    margin-bottom: 4px;
+}
+
+.section-heading p {
+    color: #737f76;
+
+    font-size: 14px;
+}
+
+
+/* ================= FORM ================= */
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+
+/* LABEL */
+
+.form-group label {
+    display: block;
+
+    color: #34483a;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    margin-bottom: 7px;
+}
+
+
+/* INPUT + SELECT */
+
+.form-group input,
+.form-group select {
+
+    width: 100%;
+
+    height: 48px;
+
+    padding: 0 13px;
+
+    background: #ffffff;
+
+    border: 1px solid #ccd7cd;
+
+    border-radius: 8px;
+
+    color: #26352a;
+
+    font-size: 14px;
+
+    outline: none;
+
+    transition: 0.2s ease;
+}
+
+
+/* FOCUS */
+
+.form-group input:focus,
+.form-group select:focus {
+
+    border-color: #4d9660;
+
+    box-shadow:
+        0 0 0 3px rgba(77, 150, 96, 0.10);
+}
+
+
+/* PLACEHOLDER */
+
+.form-group input::placeholder {
+    color: #9aa59d;
+}
+
+
+/* OPTIONAL TEXT */
+
+.optional {
+    color: #89958c;
+
+    font-size: 12px;
+
+    font-weight: normal;
+}
+
+
+/* ================= MAIN BUTTON ================= */
+
+.generate-btn {
+
+    width: 100%;
+
+    min-height: 47px;
+
+    padding: 11px 18px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #347c46;
+
+    color: #ffffff;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    transition: 0.2s ease;
+}
+
+.generate-btn:hover {
+
+    background: #286638;
+
+    transform: translateY(-1px);
+}
+
+
+/* ================= RESULT BUTTONS ================= */
+
+.back-home-btn {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-height: 46px;
+
+    padding: 11px 20px;
+
+    border-radius: 8px;
+
+    background: #edf4ee;
+
+    color: #356442;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    transition: 0.2s ease;
+}
+
+.back-home-btn:hover {
+    background: #dfece1;
+}
+
+
+/* ================= RESULT ACTIONS ================= */
+
+.result-actions {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    margin-top: 25px;
+}
+
+
+/* ================= RECOMMENDATION ================= */
+
+.recommendation-card {
+
+    border-top: 4px solid #4b925b;
+}
+
+
+.recommendation-main {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    padding: 18px;
+
+    background: #f3f8f3;
+
+    border-radius: 10px;
+}
+
+
+.recommendation-icon {
+
+    width: 60px;
+
+    height: 60px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: #e0f0e2;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 28px;
+}
+
+
+.recommendation-main h2 {
+
+    color: #2f703f;
+
+    font-size: 26px;
+
+    margin-bottom: 3px;
+}
+
+
+.recommendation-main p {
+
+    color: #69766d;
+
+    font-size: 13px;
+}
+
+
+/* ================= REASONS ================= */
+
+.reason-list {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 9px;
+}
+
+
+.reason-item {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    padding: 10px 12px;
+
+    background: #f7faf7;
+
+    border-radius: 8px;
+
+    color: #4d5e52;
+
+    font-size: 14px;
+}
+
+
+.reason-check {
+
+    width: 22px;
+
+    height: 22px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #dceede;
+
+    color: #337344;
+
+    border-radius: 50%;
+
+    font-weight: bold;
+}
+
+
+/* ================= CROP OPTIONS ================= */
+
+.crop-options {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 13px;
+}
+
+
+.crop-option {
+
+    display: flex;
+
+    gap: 14px;
+
+    padding: 16px;
+
+    background: #fbfdfb;
+
+    border: 1px solid #e1e8e1;
+
+    border-radius: 10px;
+}
+
+
+.crop-rank {
+
+    width: 40px;
+
+    height: 40px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #edf5ee;
+
+    color: #356c41;
+
+    border-radius: 9px;
+
+    font-size: 17px;
+
+    font-weight: bold;
+}
+
+
+.crop-info {
+    flex: 1;
+}
+
+
+.crop-info h3 {
+
+    color: #2f5137;
+
+    margin-bottom: 3px;
+}
+
+
+.crop-info p {
+
+    color: #68766d;
+
+    font-size: 13px;
+}
+
+
+.crop-info strong {
+
+    color: #347844;
+}
+
+
+.crop-reasons {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 6px;
+
+    margin-top: 9px;
+}
+
+
+.crop-reasons span {
+
+    background: #edf5ee;
+
+    color: #50705a;
+
+    padding: 4px 8px;
+
+    border-radius: 15px;
+
+    font-size: 11px;
+}
+
+
+/* ================= CROP FINANCIAL ================= */
+
+.crop-financial {
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 10px;
+
+    margin-top: 13px;
+}
+
+
+.crop-financial div {
+
+    background: #f5f8f5;
+
+    padding: 9px;
+
+    border-radius: 7px;
+}
+
+
+.crop-financial strong,
+.crop-financial span {
+
+    display: block;
+}
+
+
+.crop-financial strong {
+
+    color: #758078;
+
+    font-size: 11px;
+
+    margin-bottom: 2px;
+}
+
+
+.crop-financial span {
+
+    color: #304d37;
+
+    font-size: 14px;
+
+    font-weight: 700;
+}
+
+
+/* ================= INFORMATION GRID ================= */
+
+.info-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 12px;
+}
+
+
+.info-box {
+
+    background: #f7faf7;
+
+    border: 1px solid #e7ece7;
+
+    border-radius: 9px;
+
+    padding: 13px;
+}
+
+
+.info-box span {
+
+    display: block;
+
+    color: #78847c;
+
+    font-size: 11px;
+
+    margin-bottom: 3px;
+}
+
+
+.info-box strong {
+
+    display: block;
+
+    color: #304c36;
+
+    font-size: 15px;
+}
+
+
+/* ================= BUDGET MESSAGE ================= */
+
+.budget-message {
+
+    margin-top: 17px;
+
+    padding: 13px;
+
+    background: #f8f6ed;
+
+    border: 1px solid #ebe4c9;
+
+    border-radius: 8px;
+
+    color: #6b6038;
+
+    font-size: 13px;
+}
+
+
+.planning-note {
+
+    margin-top: 16px;
+
+    color: #89938c;
+
+    font-size: 11px;
+}
+
+
+/* ================= CROP SCHEDULE ================= */
+
+.schedule-container {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 14px;
+}
+
+
+.schedule-item {
+
+    display: flex;
+
+    gap: 13px;
+}
+
+
+.schedule-number {
+
+    width: 38px;
+
+    height: 38px;
+
+    flex-shrink: 0;
+
+    background: #e7f2e8;
+
+    color: #357244;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-weight: bold;
+}
+
+
+.schedule-content {
+
+    flex: 1;
+
+    background: #f8faf8;
+
+    border: 1px solid #e6ebe6;
+
+    border-radius: 9px;
+
+    padding: 12px 14px;
+}
+
+
+.schedule-time {
+
+    display: inline-block;
+
+    color: #4b8757;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    margin-bottom: 2px;
+}
+
+
+.schedule-content h3 {
+
+    color: #35553c;
+
+    font-size: 15px;
+
+    margin-bottom: 3px;
+}
+
+
+.schedule-content p {
+
+    color: #707c74;
+
+    font-size: 12px;
+}
+
+
+/* ================= FARMER TIP ================= */
+
+.farmer-tip {
+
+    margin-top: 20px;
+
+    padding: 15px;
+
+    background: #f1f7ef;
+
+    border-left: 4px solid #579462;
+
+    border-radius: 8px;
+}
+
+
+.farmer-tip h3 {
+
+    color: #376642;
+
+    font-size: 15px;
+
+    margin-bottom: 4px;
+}
+
+
+.farmer-tip p {
+
+    color: #657269;
+
+    font-size: 12px;
+}
+
+
+/* ================= FOOTER ================= */
+
+.footer {
+
+    text-align: center;
+
+    padding: 22px 15px;
+
+    background: #ffffff;
+
+    border-top: 1px solid #e4e9e4;
+
+    color: #7b877e;
+
+    font-size: 12px;
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 850px) {
+
+    .navbar {
+
+        flex-direction: column;
+
+        gap: 11px;
+
+        padding: 14px 5%;
+    }
+
+
+    .nav-links {
+
+        width: 100%;
+
+        justify-content: center;
+
+        flex-wrap: wrap;
+
+        gap: 9px 16px;
+    }
+
+
+    .planning-page {
+
+        width: 92%;
+
+        padding-top: 32px;
+    }
+
+
+    .planning-header h1 {
+
+        font-size: 29px;
+    }
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 600px) {
+
+    .logo {
+        font-size: 20px;
+    }
+
+
+    .nav-links {
+        gap: 7px 12px;
+    }
+
+
+    .nav-links a {
+        font-size: 12px;
+    }
+
+
+    .planning-page {
+
+        width: 94%;
+
+        padding: 27px 0 42px;
+    }
+
+
+    .planning-header h1 {
+
+        font-size: 25px;
+    }
+
+
+    .planning-header p {
+
+        font-size: 13px;
+    }
+
+
+    .planning-card {
+
+        padding: 18px;
+
+        border-radius: 12px;
+    }
+
+
+    .section-heading h2 {
+
+        font-size: 20px;
+    }
+
+
+    .recommendation-main {
+
+        align-items: flex-start;
+
+        padding: 14px;
+    }
+
+
+    .recommendation-icon {
+
+        width: 50px;
+
+        height: 50px;
+
+        font-size: 23px;
+    }
+
+
+    .recommendation-main h2 {
+
+        font-size: 22px;
+    }
+
+
+    .info-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .crop-financial {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .result-actions {
+
+        flex-direction: column;
+    }
+
+
+    .result-actions .generate-btn,
+    .result-actions .back-home-btn {
+
+        width: 100%;
+    }
+}
+
+
+/* ================= SMALL MOBILE ================= */
+
+@media (max-width: 400px) {
+
+    .planning-header h1 {
+
+        font-size: 22px;
+    }
+
+
+    .planning-card {
+
+        padding: 15px;
+    }
+
+
+    .nav-links a {
+
+        font-size: 11px;
+    }
+}

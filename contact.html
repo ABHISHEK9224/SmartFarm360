@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Get Help | SmartFarm360</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+
+    <nav class="navbar">
+
+        <a href="/" class="logo">
+            🌱 SmartFarm360
+        </a>
+
+        <div class="nav-links">
+
+            <a href="/">Home</a>
+
+            <a href="/farm-input">
+                Farm Planning
+            </a>
+
+            <a href="/about">
+                About
+            </a>
+
+            <a href="/contact" class="active">
+                Get Help
+            </a>
+
+            <a href="/admin">
+                Admin
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- PAGE -->
+
+    <main class="help-page">
+
+
+        <!-- HEADER -->
+
+        <section class="help-header">
+
+            <div class="help-icon">
+                🤝
+            </div>
+
+            <span class="page-label">
+                FARMER SUPPORT
+            </span>
+
+            <h1>
+                Need Help?
+            </h1>
+
+            <p>
+                Don't worry. You can contact our support team
+                or get guidance from an agricultural officer.
+            </p>
+
+        </section>
+
+
+        <!-- QUICK HELP -->
+
+        <section class="quick-help">
+
+            <h2>
+                How can we help you?
+            </h2>
+
+            <div class="help-options">
+
+
+                <a href="/officers" class="help-option">
+
+                    <div class="help-option-icon">
+                        👨‍🌾
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Talk to an Officer
+                        </h3>
+
+                        <p>
+                            Get farming advice from an
+                            agricultural officer.
+                        </p>
+
+                    </div>
+
+                    <span class="arrow">
+                        →
+                    </span>
+
+                </a>
+
+
+                <div class="help-option">
+
+                    <div class="help-option-icon">
+                        📩
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Send a Message
+                        </h3>
+
+                        <p>
+                            Ask us your farming-related
+                            question.
+                        </p>
+
+                    </div>
+
+                    <span class="arrow">
+                        →
+                    </span>
+
+                </div>
+
+
+                <div class="help-option">
+
+                    <div class="help-option-icon">
+                        📞
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Get Support
+                        </h3>
+
+                        <p>
+                            Contact SmartFarm360 support
+                            for technical assistance.
+                        </p>
+
+                    </div>
+
+                    <span class="arrow">
+                        →
+                    </span>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- MESSAGE FORM -->
+
+        <section class="message-section">
+
+            <div class="message-heading">
+
+                <div class="message-icon">
+                    ✉️
+                </div>
+
+                <div>
+
+                    <h2>
+                        Send Us a Message
+                    </h2>
+
+                    <p>
+                        Tell us what you need help with.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <form class="simple-contact-form">
+
+
+                <div class="form-row">
+
+
+                    <div class="simple-form-group">
+
+                        <label>
+                            Your Name
+                        </label>
+
+                        <input
+                            type="text"
+                            placeholder="Enter your name"
+                        >
+
+                    </div>
+
+
+                    <div class="simple-form-group">
+
+                        <label>
+                            Mobile Number
+                        </label>
+
+                        <input
+                            type="tel"
+                            placeholder="Enter your mobile number"
+                        >
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="simple-form-group">
+
+                    <label>
+                        What do you need help with?
+                    </label>
+
+                    <select>
+
+                        <option value="">
+                            Select an option
+                        </option>
+
+                        <option>
+                            Crop selection
+                        </option>
+
+                        <option>
+                            Soil related question
+                        </option>
+
+                        <option>
+                            Water management
+                        </option>
+
+                        <option>
+                            Fertilizer guidance
+                        </option>
+
+                        <option>
+                            Farm planning
+                        </option>
+
+                        <option>
+                            Other
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="simple-form-group">
+
+                    <label>
+                        Your Question
+                    </label>
+
+                    <textarea
+                        rows="5"
+                        placeholder="Write your question here..."
+                    ></textarea>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="large-green-btn"
+                >
+                    Send Message
+                    <span>→</span>
+                </button>
+
+
+            </form>
+
+        </section>
+
+
+        <!-- SIMPLE NOTE -->
+
+        <div class="help-note">
+
+            <span>💚</span>
+
+            <p>
+                <strong>We're here to help.</strong>
+                You don't need to know technical terms.
+                Simply tell us what you need.
+            </p>
+
+        </div>
+
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer class="footer">
+
+        <p>
+            © 2026 SmartFarm360
+        </p>
+
+        <p>
+            Making farming decisions simpler.
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>

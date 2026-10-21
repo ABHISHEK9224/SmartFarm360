@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Farm Planning | SmartFarm360</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}?v=2">
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<nav class="navbar">
+
+    <a href="/" class="logo">
+        🌱 SmartFarm360
+    </a>
+
+    <div class="nav-links">
+
+        <a href="/">Home</a>
+
+        <a href="/farm-input">
+            Farm Planning
+        </a>
+
+        <a href="/about">
+            About
+        </a>
+
+        <a href="/contact">
+            Contact
+        </a>
+
+        <a href="/officers">
+            Agricultural Officers
+        </a>
+
+        <a href="/admin">
+            Admin
+        </a>
+
+    </div>
+
+</nav>
+
+
+<!-- ================= MAIN CONTENT ================= -->
+
+<main class="planning-page">
+
+    <!-- PAGE HEADER -->
+
+    <div class="planning-header">
+
+        <span class="planning-label">
+            SMART FARM PLANNING
+        </span>
+
+        <h1>
+            🌾 Start Your Farm Plan
+        </h1>
+
+        <p>
+            Enter your farm details to receive a
+            personalized farming recommendation.
+        </p>
+
+    </div>
+
+
+    <!-- FARM FORM CARD -->
+
+    <section class="planning-card">
+
+        <div class="section-heading">
+
+            <h2>
+                🌾 Farm Details
+            </h2>
+
+            <p>
+                Please provide accurate information
+                about your farm.
+            </p>
+
+        </div>
+
+
+        <!-- FORM -->
+
+        <form action="/generate-plan"
+              method="POST">
+
+
+            <!-- LAND AREA -->
+
+            <div class="form-group">
+
+                <label for="land_area">
+                    Land Area (in acres)
+                </label>
+
+                <input
+                    type="number"
+                    id="land_area"
+                    name="land_area"
+                    placeholder="Example: 5"
+                    min="0.1"
+                    step="0.1"
+                    required
+                >
+
+            </div>
+
+
+            <!-- SOIL TYPE -->
+
+            <div class="form-group">
+
+                <label for="soil_type">
+                    Soil Type
+                </label>
+
+                <select
+                    id="soil_type"
+                    name="soil_type"
+                    required
+                >
+
+                    <option value="">
+                        Select soil type
+                    </option>
+
+                    <option value="Loamy">
+                        Loamy
+                    </option>
+
+                    <option value="Clayey">
+                        Clayey
+                    </option>
+
+                    <option value="Sandy">
+                        Sandy
+                    </option>
+
+                    <option value="Black Soil">
+                        Black Soil
+                    </option>
+
+                    <option value="Red Soil">
+                        Red Soil
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- WATER -->
+
+            <div class="form-group">
+
+                <label for="water_availability">
+                    Water Availability
+                </label>
+
+                <select
+                    id="water_availability"
+                    name="water_availability"
+                    required
+                >
+
+                    <option value="">
+                        Select water availability
+                    </option>
+
+                    <option value="Low">
+                        Low
+                    </option>
+
+                    <option value="Medium">
+                        Medium
+                    </option>
+
+                    <option value="High">
+                        High
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- SEASON -->
+
+            <div class="form-group">
+
+                <label for="season">
+                    Weather / Season
+                </label>
+
+                <select
+                    id="season"
+                    name="season"
+                    required
+                >
+
+                    <option value="">
+                        Select season
+                    </option>
+
+                    <option value="Kharif">
+                        Kharif
+                    </option>
+
+                    <option value="Rabi">
+                        Rabi
+                    </option>
+
+                    <option value="Summer">
+                        Summer
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- BUDGET -->
+
+            <div class="form-group">
+
+                <label for="budget">
+                    Available Budget (₹)
+                </label>
+
+                <input
+                    type="number"
+                    id="budget"
+                    name="budget"
+                    placeholder="Example: 50000"
+                    min="0"
+                    step="100"
+                    required
+                >
+
+            </div>
+
+
+            <!-- PREFERRED CROP -->
+
+            <div class="form-group">
+
+                <label for="preferred_crop">
+
+                    Preferred Crop
+
+                    <span class="optional">
+                        (Optional)
+                    </span>
+
+                </label>
+
+                <select
+                    id="preferred_crop"
+                    name="preferred_crop"
+                >
+
+                    <option value="">
+                        No preference
+                    </option>
+
+                    <option value="Maize">
+                        Maize
+                    </option>
+
+                    <option value="Cotton">
+                        Cotton
+                    </option>
+
+                    <option value="Chickpea">
+                        Chickpea
+                    </option>
+
+                    <option value="Wheat">
+                        Wheat
+                    </option>
+
+                    <option value="Rice">
+                        Rice
+                    </option>
+
+                    <option value="Tomato">
+                        Tomato
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- SUBMIT BUTTON -->
+
+            <button
+                type="submit"
+                class="generate-btn"
+            >
+                🌱 Generate Farm Plan
+            </button>
+
+        </form>
+
+    </section>
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer">
+
+    <p>
+        © 2026 SmartFarm360 |
+        Integrated Farm Resource Planning System
+    </p>
+
+</footer>
+
+
+</body>
+</html>
